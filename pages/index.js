@@ -23,13 +23,13 @@ export default function Home() {
         <h1 className="text-xl md:text-4xl lg:text-8xl font-medium">
           cass.works/when-she-wants
           <br />
-          <span className="text-white">cass.works</span>/on-branding
+          <span className="opacity-0">cass.works</span>/on-branding
           <br />
-          <span className="text-white">cass.works</span>/on-wayfinding
+          <span className="opacity-0">cass.works</span>/on-wayfinding
           <br />
-          <span className="text-white">cass.works</span>/f*!king-hard
+          <span className="opacity-0">cass.works</span>/f*!king-hard
           <br />
-          <span className="text-white">cass.works</span>/for-you
+          <span className="opacity-0">cass.works</span>/for-you
         </h1>
       </main>
     </div>
