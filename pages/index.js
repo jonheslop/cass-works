@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-start justify-start min-h-screen py-2">
+    <div className="flex flex-col items-start justify-start min-h-screen py-2 dark:text-white dark:bg-black">
       <Head>
         <title>Cassie Leavers is cass.works</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
