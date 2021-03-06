@@ -4,7 +4,12 @@ export default function Home() {
   return (
     <div className="flex flex-col items-start justify-start min-h-screen py-2">
       <Head>
-        <title>Cass.works</title>
+        <title>Cassie Leavers - cass.works</title>
+
+        <meta
+          name="description"
+          content="Cassie Leavers is a graphic designer based in London."
+        />
       </Head>
 
       <main className="flex flex-col items-start justify-start flex-1 p-8 lg:p-20">
