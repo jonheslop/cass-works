@@ -47,7 +47,7 @@ export default function Home({ subscription }) {
   } = useQuerySubscription(subscription);
 
   return (
-    <Layout>
+    <Layout title="Hello">
       <h1 className="text-xl md:text-4xl lg:text-8xl font-medium">
         cass.works/when-she-wants
         <br />

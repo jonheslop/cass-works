@@ -53,7 +53,7 @@ export default function Post({ subscription, preview }) {
   } = useQuerySubscription(subscription);
 
   return (
-    <Layout>
+    <Layout title={project.title}>
       <h1 className="text-4xl ">{project.title}</h1>
       <div
         className={markdownStyles["markdown"]}
