@@ -1,9 +1,9 @@
-import { request } from "../lib/datocms";
+import { request } from "@/lib/datocms";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
+import { metaTagsFragment, responsiveImageFragment } from "@/lib/fragments";
 import { Image } from "react-datocms";
 import Link from "next/link";
-import Layout from "../components/layout";
+import Layout from "@/components/layout";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {

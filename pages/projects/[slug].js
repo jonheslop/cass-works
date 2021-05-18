@@ -1,8 +1,8 @@
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import { request } from "../../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
-import markdownStyles from "../../components/markdown.module.css";
-import Layout from "../../components/layout";
+import { request } from "@/lib/datocms";
+import { metaTagsFragment, responsiveImageFragment } from "@/lib/fragments";
+import markdownStyles from "@/components/markdown.module.css";
+import Layout from "@/components/layout";
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allProjects { slug } }` });
