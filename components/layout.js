@@ -1,7 +1,13 @@
 import Head from "next/head";
 import Nav from "@/components/nav";
+import Preview from "@/components/preview";
 
-export default function Layout({ title, showHomeLink = true, children }) {
+export default function Layout({
+  title,
+  preview = false,
+  showHomeLink = true,
+  children,
+}) {
   return (
     <div className="flex flex-col items-start justify-start min-h-screen">
       <Head>
@@ -24,6 +30,7 @@ export default function Layout({ title, showHomeLink = true, children }) {
       </Head>
 
       <main className="flex flex-col items-start justify-start flex-1 px-8 lg:px-24 w-full">
+        <Preview preview={preview} />
         <Nav showHomeLink={showHomeLink} />
         {children}
       </main>

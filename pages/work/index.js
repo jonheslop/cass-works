@@ -47,7 +47,7 @@ export default function Home({ subscription }) {
   } = useQuerySubscription(subscription);
 
   return (
-    <Layout title="Work">
+    <Layout title="Work" preview={subscription.preview}>
       <ul className="grid grid-cols-2 grid w-full my-16 gap-10">
         {allProjects.map((project) => (
           <Link
