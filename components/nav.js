@@ -4,9 +4,9 @@ export default function Layout({ showHomeLink = true }) {
   return (
     <header className="flex items-center justify-between w-full py-8">
       {showHomeLink && (
-        <h1 className="text-2xl font-thin tracking-wide">
+        <h1 className="text-2xl font-extralight tracking-wide">
           <Link href="/">
-            <a className="text-2xl font-thin tracking-wide hover:underline">
+            <a className="text-2xl font-extralight tracking-wide hover:underline">
               cass.works
             </a>
           </Link>
@@ -16,14 +16,14 @@ export default function Layout({ showHomeLink = true }) {
         <ul className="flex space-x-24">
           <li>
             <Link href="/work">
-              <a className="text-2xl font-thin tracking-wide hover:underline">
+              <a className="text-2xl font-extralight tracking-wide hover:underline">
                 work
               </a>
             </Link>
           </li>
           <li>
             <Link href="/info">
-              <a className="text-2xl font-thin tracking-wide hover:underline">
+              <a className="text-2xl font-extralight tracking-wide hover:underline">
                 info
               </a>
             </Link>

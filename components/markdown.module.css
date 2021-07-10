@@ -21,3 +21,7 @@
 .markdown a:visited {
   @apply underline;
 }
+
+.markdown li {
+  @apply font-extralight;
+}
