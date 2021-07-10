@@ -78,8 +78,8 @@ export default function Post({ subscription, preview }) {
   } = useQuerySubscription(subscription);
 
   return (
-    <Layout title={project.title} preview={subscription.preview}>
-      <div className="grid grid-cols-2 grid w-full my-16 gap-10">
+    <Layout title={project.title} preview={subscription.preview} darkTheme={false} >
+      <div className="grid grid-cols-2 w-full my-16 gap-10">
         <h1 className="text-4xl">{project.title}</h1>
         <div
           className={markdownStyles["markdown"]}

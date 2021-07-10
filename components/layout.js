@@ -7,9 +7,15 @@ export default function Layout({
   preview = false,
   showHomeLink = true,
   children,
+  darkTheme = true
 }) {
+
+  const themeClasses = darkTheme ? "bg-black text-white" : ""
+
   return (
-    <div className="flex flex-col items-start justify-start min-h-screen">
+    <div
+      className={`flex flex-col items-start justify-start min-h-screen ${themeClasses}`}
+    >
       <Head>
         <title>{title} - Cassie Leavers is cass.works</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
