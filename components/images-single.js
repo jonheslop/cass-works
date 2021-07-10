@@ -1,27 +1,49 @@
 import { Image } from "react-datocms";
 
 export default function Single({ image, position, size }) {
-  const positionClasses = {
-    left: "mr-auto",
-    right: "ml-auto",
-    center: "mx-auto",
-  };
-  const sizeClasses = {
+  const gridClasses = {
     full: "w-full",
-    "one-third": "w-1/3",
-    "two-thirds": "w-2/3",
-    quarter: "w-1/4",
-    half: "w-1/2",
+    "one-third": "grid-cols-3",
+    "two-thirds": "grid-cols-3",
+    quarter: "grid-cols-4",
+    half: "grid-cols-2",
+  };
+  const itemClasses = {
+    full: {
+      left: "",
+      right: "",
+      center: "",
+    },
+    "one-third": {
+      left: "",
+      right: "col-start-3",
+      center: "col-start-2",
+    },
+    "two-thirds": {
+      left: "col-span-2",
+      right: "col-start-2 col-span-2",
+      center: "",
+    },
+    quarter: {
+      left: "",
+      right: "col-start-3",
+      center: "col-start-2",
+    },
+    half: {
+      left: "",
+      right: "col-start-2",
+      center: "",
+    },
   };
 
   return (
-    <div className="my-8 flex w-full">
+    <div className={`my-8 grid gap-16 w-full ${gridClasses[size]}`}>
       <Image
         data={{
           ...image.responsiveImage,
           alt: ``,
         }}
-        className={`${sizeClasses[size]} ${positionClasses[position]}`}
+        className={`${itemClasses[size][position]}`}
       />
     </div>
   );
