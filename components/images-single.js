@@ -37,7 +37,9 @@ export default function Single({ image, position, size }) {
   };
 
   return (
-    <div className={`my-8 grid gap-16 w-full ${gridClasses[size]}`}>
+    <div
+      className={`my-2 md:my-8 grid gap-4 md:gap-16 w-full ${gridClasses[size]}`}
+    >
       <Image
         data={{
           ...image.responsiveImage,

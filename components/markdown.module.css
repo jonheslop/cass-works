@@ -1,6 +1,13 @@
 .markdown {
-  @apply text-2xl leading-relaxed;
+  @apply text-base leading-relaxed;
 }
+
+@media (min-width: 640px) {
+  .markdown {
+    @apply text-2xl;
+  }
+}
+
 
 .markdown p,
 .markdown ul,
