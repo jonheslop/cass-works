@@ -1,6 +1,5 @@
 import { request } from "@/lib/datocms";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Link from "next/link";
 import Layout from "@/components/layout";
 import markdownStyles from "@/components/markdown.module.css";
 
@@ -37,7 +36,7 @@ export default function Info({ subscription }) {
   const {
     data: { info },
   } = useQuerySubscription(subscription);
-  console.log(info)
+
   return (
     <Layout title="Info" preview={subscription.preview}>
       <div className="grid md:grid-cols-2 w-full my-16 gap-16">
