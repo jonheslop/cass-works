@@ -3,7 +3,7 @@ import Layout from "@/components/layout";
 export default function Home() {
   return (
     <Layout title="Hello" showHomeLink={false}>
-      <h1 className="text-xl md:text-4xl lg:text-8xl font-extralight">
+      <h1 className="text-2xl md:text-4xl lg:text-6xl xl:text-8xl font-extralight">
         cass.works/<span class="opacity-50">freelance</span>
         <br />
         <span className="opacity-0">cass.works</span>
