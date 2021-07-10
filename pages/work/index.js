@@ -48,7 +48,7 @@ export default function Home({ subscription }) {
 
   return (
     <Layout title="Work" preview={subscription.preview}>
-      <ul className="grid grid-cols-2 grid w-full my-16 gap-10">
+      <ul className="grid md:grid-cols-2 w-full my-16 gap-10">
         {allProjects.map((project) => (
           <Link
             as={`/work/${project.slug}`}
