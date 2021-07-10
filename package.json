@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.0.4",
-    "next": "latest",
+    "next": "^11.0.1",
     "postcss": "^8.1.10",
     "react": "^17.0.1",
     "react-datocms": "^1.6.3",
