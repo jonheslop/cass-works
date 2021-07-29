@@ -55,7 +55,7 @@ export default function Home({ subscription }) {
             href="/work/[slug]"
             key={project.id}
           >
-            <a className="hover:underline">
+            <a className="group">
               <Image
                 data={{
                   ...project.coverImage.responsiveImage,
@@ -63,7 +63,7 @@ export default function Home({ subscription }) {
                 }}
                 className="shadow-small"
               />
-              <h3 className="mt-4 text-2xl font-thin tracking-wide">
+              <h3 className="inline-block mt-4 text-2xl font-thin tracking-wide border-b border-transparent group-hover:border-white/75">
                 {project.title}
               </h3>
             </a>

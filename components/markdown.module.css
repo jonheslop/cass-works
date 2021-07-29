@@ -30,5 +30,5 @@
 }
 
 .markdown li {
-  @apply font-extralight;
+  @apply font-extralight text-base;
 }

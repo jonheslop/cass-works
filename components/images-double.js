@@ -10,7 +10,7 @@ export default function Double({ images }) {
             ...image.responsiveImage,
             alt: ``,
           }}
-          className="shadow-small"
+          className="shadow-small self-start"
         />
       ))}
     </div>
