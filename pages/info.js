@@ -39,28 +39,33 @@ export default function Info({ subscription }) {
 
   return (
     <Layout title="Info" preview={subscription.preview}>
-      <div className="grid md:grid-cols-2 w-full my-16 gap-16">
+      <div className="sm:flex justify-between w-full my-16 gap-8 md:gap-16 xl:gap-32">
         <article className="">
-          <h2 className="text-2xl">{info.title}</h2>
           <div
-            className={`font-extralight opacity-50 ${markdownStyles["markdown"]} max-w-xl`}
+            className={`font-extralight ${markdownStyles["markdown"]} max-w-xl`}
             dangerouslySetInnerHTML={{ __html: info.body }}
           />
         </article>
         <aside>
-          <h3 className="text-2xl">Contact:</h3>
-          <a
-            className="block text-base md:text-2xl font-extralight hover:underline"
-            href="mailto:cassie@cass.works"
+          <div className={`font-extralight ${markdownStyles["markdown"]}`}
           >
-            cassie@cass.works
-          </a>
-          <a
-            className="block text-base md:text-2xl font-extralight hover:underline"
-            href="tel:07976304186"
-          >
-            07976 304186
-          </a>
+            <p className="mb-8">
+              I am currently open to collaboration and/or freelance
+              <br /> opportunities and would love to hear from you.
+            </p>
+            <a
+              className="block text-base md:text-2xl font-extralight hover:underline"
+              href="mailto:cassie@cass.works"
+            >
+              cassie@cass.works
+            </a>
+            <a
+              className="block text-base md:text-2xl font-extralight hover:underline"
+              href="tel:07976304186"
+            >
+              07976 304186
+            </a>
+          </div>
         </aside>
       </div>
     </Layout>
