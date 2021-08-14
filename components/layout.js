@@ -36,7 +36,7 @@ export default function Layout({
       </Head>
 
       <main className="flex flex-col items-start justify-start flex-1 px-8 lg:px-24 w-full">
-        <Preview preview={preview} />
+        <Preview preview={preview} darkTheme={darkTheme} />
         <Nav showHomeLink={showHomeLink} darkTheme={darkTheme} />
         {children}
       </main>

@@ -1,7 +1,11 @@
-export default function Preview({ preview = false }) {
+export default function Preview({ preview = false, darkTheme = false }) {
   if (preview) {
     return (
-      <div className="border-b bg-yellow-100 border-yellow-100 w-full ">
+      <div
+        className={`${
+          darkTheme ? "bg-indigo-900" : " bg-yellow-100"
+        } w-full`}
+      >
         <div className="py-2 text-center text-sm">
           This is page is showing unpublished content.{" "}
           <a
