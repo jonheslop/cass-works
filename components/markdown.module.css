@@ -1,0 +1,34 @@
+.markdown {
+  @apply text-base leading-relaxed;
+}
+
+@media (min-width: 640px) {
+  .markdown {
+    @apply text-2xl;
+  }
+}
+
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply mb-6 max-w-prose;
+}
+
+.markdown h2 {
+  @apply text-3xl mt-12 mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown a:link,
+.markdown a:visited {
+  @apply underline;
+}
+
+.markdown li {
+  @apply font-extralight text-base;
+}
