@@ -10,6 +10,9 @@ export async function getStaticProps({ preview }) {
         info {
           title
           body(markdown: true)
+          rightSide(markdown: true)
+          email
+          phone
         }
       }
     `,
@@ -47,23 +50,21 @@ export default function Info({ subscription }) {
           />
         </article>
         <aside>
-          <div className={`font-extralight ${markdownStyles["markdown"]}`}
+          <div
+            className={`font-extralight ${markdownStyles["markdown"]} max-w-xl`}
           >
-            <p className="mb-8">
-              I am currently open to collaboration and/or freelance
-              <br /> opportunities and would love to hear from you.
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: info.rightSide }} />
             <a
               className="block text-base md:text-2xl font-extralight hover:underline"
-              href="mailto:cassie@cass.works"
+              href={`mailto:${info.email}`}
             >
-              cassie@cass.works
+              {info.email}
             </a>
             <a
               className="block text-base md:text-2xl font-extralight hover:underline"
-              href="tel:07976304186"
+              href={`tel:${info.phone}`}
             >
-              07976 304186
+              {info.phone}
             </a>
           </div>
         </aside>
