@@ -1,20 +1,75 @@
+import { request } from "@/lib/datocms";
+import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import { metaTagsFragment, responsiveImageFragment } from "@/lib/fragments";
+import { Image } from "react-datocms";
+import Link from "next/link";
 import Layout from "@/components/layout";
 
-export default function Home() {
+export async function getStaticProps({ preview }) {
+  const graphqlRequest = {
+    query: `
+      {
+        allProjects {
+          id
+          title
+          slug
+          coverImage {
+            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 800, h: 600 }) {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+      ${responsiveImageFragment}
+    `,
+    preview,
+  };
+
+  return {
+    props: {
+      subscription: preview
+        ? {
+            ...graphqlRequest,
+            initialData: await request(graphqlRequest),
+            token: process.env.CMS_DATOCMS_API_TOKEN,
+          }
+        : {
+            enabled: false,
+            initialData: await request(graphqlRequest),
+          },
+    },
+  };
+}
+
+export default function Home({ subscription }) {
+  const {
+    data: { allProjects },
+  } = useQuerySubscription(subscription);
+
   return (
-    <Layout title="Hello" showHomeLink={false}>
-      <h1 className="text-2xl md:text-4xl lg:text-6xl xl:text-8xl font-light">
-        cass.works<span className="opacity-50">/with-you</span>
-        <br />
-        <span className="opacity-0">cass.works</span>
-        <span className="opacity-50">/on-branding</span>
-        <br />
-        <span className="opacity-0">cass.works</span>
-        <span className="opacity-50 truncate">/on-environmental</span>
-        <br />
-        <span className="opacity-0">cass.works</span>
-        <span className="opacity-50">/on-wayfinding</span>
-      </h1>
+    <Layout title="Work" preview={subscription.preview}>
+      <ul className="grid md:grid-cols-2 w-full my-16 gap-16">
+        {allProjects.map((project) => (
+          <Link
+            as={`/work/${project.slug}`}
+            href="/work/[slug]"
+            key={project.id}
+          >
+            <a className="group">
+              <Image
+                data={{
+                  ...project.coverImage.responsiveImage,
+                  alt: ``,
+                }}
+                className="shadow-small"
+              />
+              <h3 className="inline-block mt-4 text-2xl font-thin tracking-wide border-b border-transparent group-hover:border-white/75">
+                {project.title}
+              </h3>
+            </a>
+          </Link>
+        ))}
+      </ul>
     </Layout>
   );
 }
