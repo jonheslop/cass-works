@@ -19,6 +19,7 @@ export async function getStaticProps({ preview }) {
             }
           }
           tags {
+            id
             name
           }
         }
@@ -72,7 +73,10 @@ export default function Home({ subscription }) {
                 </h3>
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map((tag) => (
-                    <div className="text-sm font-thin border rounded-full py-1 px-4 flex items-center leading-none">
+                    <div
+                      key={tag.id}
+                      className="text-sm font-thin border rounded-full py-1 px-4 flex items-center leading-none"
+                    >
                       {tag.name}
                     </div>
                   ))}
