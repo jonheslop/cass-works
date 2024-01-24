@@ -1,9 +1,9 @@
-import { request } from '@/lib/datocms';
-import { renderMetaTags, useQuerySubscription } from 'react-datocms';
-import { metaTagsFragment, responsiveImageFragment } from '@/lib/fragments';
-import { Image } from 'react-datocms';
-import Link from 'next/link';
-import Layout from '@/components/layout';
+import { request } from "@/lib/datocms";
+import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import { metaTagsFragment, responsiveImageFragment } from "@/lib/fragments";
+import { Image } from "react-datocms";
+import Link from "next/link";
+import Layout from "@/components/layout";
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
@@ -52,7 +52,7 @@ export default function Home({ subscription }) {
 
   return (
     <Layout title="Work" preview={subscription.preview}>
-      <ul className="grid md:grid-cols-2 w-full my-16 gap-16">
+      <ul className="my-16 grid w-full gap-16 md:grid-cols-2">
         {allProjects.map((project) => (
           <Link
             as={`/work/${project.slug}`}
@@ -67,17 +67,17 @@ export default function Home({ subscription }) {
                 }}
                 className="shadow-small"
               />
-              <div className="flex flex-wrap items-center justify-between mt-4 gap-2">
-                <h3 className="inline-block text-2xl font-thin tracking-wide border-b border-transparent group-hover:border-white/75 mr-8">
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+                <h3 className="mr-8 inline-block border-b border-transparent text-2xl font-thin tracking-wide group-hover:border-white/75">
                   {project.title}
                 </h3>
-                <div className="flex gap-2 flex-wrap">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <div
                       key={tag.id}
-                      className="text-sm font-thin border rounded-full py-1 px-4 flex items-center leading-none"
+                      className="flex items-center rounded-full border px-4 py-1 text-sm font-light leading-none"
                     >
-                      {tag.name}
+                      <span className="-mt-px">{tag.name}</span>
                     </div>
                   ))}
                 </div>
