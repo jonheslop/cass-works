@@ -67,7 +67,7 @@ export default function Home({ subscription }) {
                 }}
                 className="shadow-small"
               />
-              <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+              <div className="mt-4 flex flex-col gap-2">
                 <h3 className="mr-8 inline-block border-b border-transparent text-2xl font-thin tracking-wide group-hover:border-white/75">
                   {project.title}
                 </h3>
