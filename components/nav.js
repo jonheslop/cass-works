@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Layout({ showHomeLink = true, darkTheme = false }) {
   return (
@@ -9,8 +9,8 @@ export default function Layout({ showHomeLink = true, darkTheme = false }) {
             <a
               className={`text-2xl font-extralight ${
                 darkTheme
-                  ? "text-white hover:border-white"
-                  : "text-black hover:border-black"
+                  ? 'text-white hover:border-white'
+                  : 'text-black hover:border-black'
               } tracking-wide border-b border-transparent hover:border-opacity-50`}
             >
               cass.works
@@ -21,15 +21,15 @@ export default function Layout({ showHomeLink = true, darkTheme = false }) {
       <nav className="ml-auto">
         <ul className="flex space-x-24">
           <li>
-            <Link href="/work">
+            <Link href="/">
               <a
                 className={`text-2xl font-extralight ${
                   darkTheme
-                    ? "text-white hover:border-white"
-                    : "text-black hover:border-black"
+                    ? 'text-white hover:border-white'
+                    : 'text-black hover:border-black'
                 } tracking-wide border-b border-transparent hover:border-opacity-50`}
               >
-                work
+                index
               </a>
             </Link>
           </li>
@@ -38,8 +38,8 @@ export default function Layout({ showHomeLink = true, darkTheme = false }) {
               <a
                 className={`text-2xl font-extralight ${
                   darkTheme
-                    ? "text-white hover:border-white"
-                    : "text-black hover:border-black"
+                    ? 'text-white hover:border-white'
+                    : 'text-black hover:border-black'
                 } tracking-wide border-b border-transparent hover:border-opacity-50`}
               >
                 info
